@@ -1,5 +1,6 @@
 import React from "react";
 import Grid from "../elements/Grid";
+import { history } from "../redux/configStore";
 import theme from "../styles/theme";
 
 const Header = () => {
@@ -12,6 +13,7 @@ const Header = () => {
       width="1110px"
       height="83px"
       margin="60px auto 0 auto"
+      _onClick={() => history.push("/")}
     >
       내가 좋아하는 동물
     </Grid>

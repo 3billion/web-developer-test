@@ -8,9 +8,20 @@ const LikeDislike = (props) => {
   const { value } = props;
   const word = value === "like" ? "좋아요" : "싫어요";
   const color = value === "like" ? theme.color.blue : theme.color.red;
-  const arr = useSelector((state) =>
+  const animal = useSelector((state) => state.animal.animal);
+  const nameArr = useSelector((state) =>
     value === "like" ? state.animal.like : state.animal.dislike
   );
+
+  const newAnimal = [];
+  animal.forEach((each) => {
+    nameArr.forEach((each_inner) => {
+      each_inner === each.name && newAnimal.push(each);
+    });
+  });
+
+  console.log(newAnimal);
+
   return (
     <Grid
       width={theme.size.big_like_ho}
@@ -26,16 +37,16 @@ const LikeDislike = (props) => {
       >
         {word}
       </Grid>
-      <EachAni
-        value={true}
-        margin="0 auto 30px auto"
-        src="https://dl.dropboxusercontent.com/s/wcie3tv697c8s0z/puppy.png?dl=0"
-      />
-      <EachAni
-        value={true}
-        margin="0 auto 30px auto"
-        src="https://dl.dropboxusercontent.com/s/wcie3tv697c8s0z/puppy.png?dl=0"
-      />
+      {newAnimal?.map((each, index) => {
+        return (
+          <EachAni
+            id={index}
+            value={true}
+            margin="0 auto 30px auto"
+            src={each.img_url}
+          />
+        );
+      })}
     </Grid>
   );
 };

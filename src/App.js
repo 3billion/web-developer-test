@@ -8,6 +8,7 @@ import Spinner from "./shared/Spinner";
 
 const App = () => {
   const isLoading = useSelector((state) => state.isLoading.isLoading);
+
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <Header />
