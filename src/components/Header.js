@@ -11,7 +11,7 @@ const Header = () => {
       color={theme.color.white}
       width="1110px"
       height="83px"
-      margin="60px auto 30px auto"
+      margin="60px auto 0 auto"
     >
       내가 좋아하는 동물
     </Grid>

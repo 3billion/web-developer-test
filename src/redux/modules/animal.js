@@ -2,7 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const animal = createSlice({
   name: "animal",
-  initialState: {},
+  initialState: {
+    animal: [],
+    like: [],
+    dislike: [],
+  },
   reducers: {},
 });
 

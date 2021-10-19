@@ -29,6 +29,8 @@ Grid.defaultProps = {
   border: null,
   bold: "400",
   font_size: "32px",
+  flex_wrap: false,
+  min_height: false,
 };
 
 const Wrapper = styled.div`
@@ -39,6 +41,7 @@ const Wrapper = styled.div`
   margin: ${(props) => props.margin};
   background-color: ${(props) => props.bg};
   color: ${(props) => props.color};
+  ${(props) => props.min_height && `min-height : ${props.min_height}`};
   ${(props) =>
     props.border &&
     `
@@ -65,6 +68,7 @@ const Wrapper = styled.div`
             `;
     }
   }}
+  ${(props) => props.flex_wrap && `flex-wrap : wrap`};
 `;
 
 export default Grid;
