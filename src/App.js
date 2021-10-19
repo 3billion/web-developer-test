@@ -1,11 +1,13 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Main from "./Main";
 import Classification from "./Classification";
 import "./App.css";
+import Header from "./components/Header";
 
 const App = () => {
   return (
-    <Router>
+    <div style={{ width: "100%", height: "100%" }}>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Main />
@@ -14,7 +16,7 @@ const App = () => {
           <Classification />
         </Route>
       </Switch>
-    </Router>
+    </div>
   );
 };
 
